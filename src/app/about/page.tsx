@@ -78,37 +78,6 @@ export default function About() {
         </Column>
       )}
       <Row fillWidth s={{ direction: "column"}} horizontal="center">
-        {about.avatar.display && (
-          <Column
-            className={styles.avatar}
-            top="64"
-            fitHeight
-            position="sticky"
-            s={{ position: "relative", style: { top: "auto" } }}
-            xs={{ style: { top: "auto" } }}
-            minWidth="160"
-            paddingX="l"
-            paddingBottom="xl"
-            gap="m"
-            flex={3}
-            horizontal="center"
-          >
-            <Avatar src={person.avatar} size="xl" />
-            <Row gap="8" vertical="center">
-              <Icon onBackground="accent-weak" name="globe" />
-              {person.location}
-            </Row>
-            {person.languages && person.languages.length > 0 && (
-              <Row wrap gap="8">
-                {person.languages.map((language, index) => (
-                  <Tag key={index} size="l">
-                    {language}
-                  </Tag>
-                ))}
-              </Row>
-            )}
-          </Column>
-        )}
         <Column className={styles.blockAlign} flex={9} maxWidth={40}>
           <Column
             id={about.intro.title}
@@ -152,7 +121,26 @@ export default function About() {
             >
               {person.role}
             </Text>
-            {social.length > 0 && (
+            <Row paddingTop="4" vertical="center" className={styles.textAlign} gap="4">
+              <Icon name="globe" onBackground="brand-weak" />
+              <Text
+                variant="body-strong-l"
+                onBackground="neutral-weak"
+              >
+                {person.location}
+              </Text>
+            </Row>
+            
+          </Column>
+          
+          {about.intro.display && (
+            <Column textVariant="body-default-l" fillWidth gap="m" marginBottom="40">
+              {about.intro.description}
+              
+            </Column>
+          )}
+
+          {social.length > 0 && (
               <Row
                 className={styles.blockAlign}
                 paddingTop="20"
@@ -164,44 +152,36 @@ export default function About() {
                 data-border="rounded"
               >
                 {social
-                      .filter((item) => item.essential)
-                      .map(
-                  (item) =>
-                    item.link && (
-                      <React.Fragment key={item.name}>
-                        <Row s={{ hide: true }}>
-                          <Button
-                            key={item.name}
-                            href={item.link}
-                            prefixIcon={item.icon}
-                            label={item.name}
-                            size="s"
-                            weight="default"
-                            variant="secondary"
-                          />
-                        </Row>
-                        <Row hide s={{ hide: false }}>
-                          <IconButton
-                            size="l"
-                            key={`${item.name}-icon`}
-                            href={item.link}
-                            icon={item.icon}
-                            variant="secondary"
-                          />
-                        </Row>
-                      </React.Fragment>
-                    ),
-                )}
-              </Row>
+                  .filter((item) => item.essential)
+                  .map((item, index) =>
+                  item.link && (
+                    <React.Fragment key={item.name}>
+                    <Row s={{ hide: true }}>
+                      <Button
+                      key={item.name}
+                      href={item.link}
+                      prefixIcon={item.icon}
+                      label={item.name}
+                      size="s"
+                      weight="default"
+                      variant={index === 0 ? "primary" : "secondary"} // Apply different style for the first element
+                      />
+                    </Row>
+                    <Row hide s={{ hide: false }}>
+                      <IconButton
+                      size="l"
+                      key={`${item.name}-icon`}
+                      href={item.link}
+                      icon={item.icon}
+                      variant={index === 0 ? "primary" : "secondary"} // Apply different style for the first element
+                      />
+                    </Row>
+                    </React.Fragment>
+                  ),
+                  )}
+                </Row>
             )}
-          </Column>
-
-          {about.intro.display && (
-            <Column textVariant="body-default-l" fillWidth gap="m" marginBottom="xl">
-              {about.intro.description}
-            </Column>
-          )}
-
+          <Row fillWidth border="neutral-medium" marginY="16" />
           {about.work.display && (
             <>
               <Heading as="h2" id={about.work.title} variant="display-strong-s" marginBottom="m">
@@ -221,21 +201,30 @@ export default function About() {
                     <Text variant="body-default-s" onBackground="brand-weak" marginBottom="m">
                       {experience.role}
                     </Text>
-                    <Column as="ul" gap="16">
+                    {experience.achievements.length === 1 ? (
+                      <Text
+                      variant="body-default-m"
+                      key={`${experience.company}-achievement`}
+                      >
+                      {experience.achievements[0]}
+                      </Text>
+                    ) : (
+                      <Column as="ul" gap="16">
                       {experience.achievements.map(
                         (achievement: React.ReactNode, index: number) => (
-                          <Text
-                            as="li"
-                            variant="body-default-m"
-                            key={`${experience.company}-${index}`}
-                          >
-                            {achievement}
-                          </Text>
+                        <Text
+                          as="li"
+                          variant="body-default-m"
+                          key={`${experience.company}-${index}`}
+                        >
+                          {achievement}
+                        </Text>
                         ),
                       )}
-                    </Column>
+                      </Column>
+                    )}
                     {experience.images && experience.images.length > 0 && (
-                      <Row fillWidth paddingTop="m" paddingLeft="40" gap="12" wrap>
+                      <Row fillWidth paddingTop="m" gap="12" wrap>
                         {experience.images.map((image, index) => (
                           <Row
                             key={index}
