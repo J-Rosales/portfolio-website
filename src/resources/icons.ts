@@ -30,9 +30,24 @@ import {
   SiSupabase,
 } from "react-icons/si";
 
-import { FaDiscord, FaGithub, FaLinkedin, FaX, FaThreads, FaInstagram, FaXTwitter, FaFacebook, FaPinterest, FaWhatsapp, FaReddit, FaTelegram, FaSteam, FaItchIo } from "react-icons/fa6";
+import { FaDiscord, FaGithub, FaLinkedin, FaX, FaThreads, FaInstagram, FaXTwitter, FaFacebook, FaPinterest, FaWhatsapp, FaReddit, FaTelegram, FaSteam, FaItchIo, FaNodeJs, FaRobot} from "react-icons/fa6";
+import { BsMusicNoteBeamed } from "react-icons/bs";
+import { SiAdobephotoshop, SiAdobeaftereffects, SiBlender, SiGit, SiGithub} from "react-icons/si";
+import { VscVscode } from "react-icons/vsc";
+
 
 export const iconLibrary: Record<string, IconType> = {
+  photoshop: SiAdobephotoshop,
+  aftereffects: SiAdobeaftereffects,
+  blender: SiBlender,
+  flstudio: BsMusicNoteBeamed,
+  git: SiGit,
+  github: SiGithub,
+  vscode: VscVscode,
+  nodejs: FaNodeJs,
+  chatgpt: FaRobot,
+  codex: FaRobot,
+  gemini: FaRobot,
   arrowUpRight: HiArrowUpRight,
   arrowRight: HiArrowRight,
   email: HiEnvelope,
@@ -47,7 +62,6 @@ export const iconLibrary: Record<string, IconType> = {
   discord: FaDiscord,
   eye: HiOutlineEye,
   eyeOff: HiOutlineEyeSlash,
-  github: FaGithub,
   steam: FaSteam,
   itchio: FaItchIo,
   linkedin: FaLinkedin,

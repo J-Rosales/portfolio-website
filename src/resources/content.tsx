@@ -101,21 +101,49 @@ const about: About = {
     title: "Introduction",
     description: (
       <>
-        Game developer with a passion with an interest in early medieval history, prosopography, and creating compelling fictional worlds.
+        Game developer with an interest in early medieval history, prosopography, and creating compelling fictional worlds.
       </>
     ),
   },
   work: {
     display: true, // set to false to hide this section
-    title: "Experience & Projects",
+    title: "Experience",
     experiences: [
       {
-        company: "Self-Employed",
+        company: "Tooling and Data Modelling",
+        timeframe: "Mar 2025 - Present",
+        role: "Self-Employed",
+        achievements: [
+          <>
+            Creating LLM-integrated pipelines for schema-driven content generation across several fields such as:
+            <ul>
+              <li>
+                <a href="https://github.com/J-Rosales/botparts-generator">Spec_v2 AI Chat Character Cards</a>
+              </li>
+              <li>
+                <a href="https://github.com/psellos-prosopographia/psellos-hub">A Prosopographic model that incorporates narrative layering</a>
+              </li>
+              <li>
+                <a href="https://github.com/psellos-prosopographia/psellos-fiction-yneva-data/">An opinionated implementation of the above model for the prosopography of a fictional fantasy world</a>
+              </li>
+              <li>
+                <a href="https://github.com/J-Rosales/pose-contact-spec/">A Spec for representing articulated humanoid actors and their interactions with the environment</a>
+              </li>
+              <li>
+                <a href="https://github.com/J-Rosales/st-scene-state">A SillyTavern extension that implements the spec above to prevent drift in spatial reasoning throughout a chat history</a>
+              </li>
+            </ul>
+          </>,
+        ],
+        images: [],
+      },
+      {
+        company: "Game Development",
         timeframe: "Nov 2024 - Present",
         role: "Self-Employed",
         achievements: [
           <>
-            Developed low-scope games across multiple genres, including:<br/>
+            Developed feature-complete Unity games across multiple genres, including:<br/>
             Strategy, First-Person Action, Reverse Bullet-hell ("Survivor-Like"), and Incremental Clicker.
           </>,
         ],
@@ -147,9 +175,9 @@ const about: About = {
         ],
       },
       {
-        company: "Hopeless Gaming",
+        company: "Senior Game Designer",
         timeframe: "May 2021 - Nov 2024",
-        role: "Senior Game Designer",
+        role: "Hopeless Gaming LLC",
         achievements: [
           <>
             Led cross-functional development efforts, coordinating and mentoring a team of developers to deliver production-ready game features
@@ -177,17 +205,21 @@ const about: About = {
   },
   technical: {
     display: true, // set to false to hide this section
-    title: "Tools & Technologies",
+    title: "Tech",
     skills: [
       {
         title: "Game Asset Creation",
         description: (
-          <>Generalist knowledge in for Digital Art, 3D Modelling, Texturing, and Music Production</>
+          <>Extensive generalist experience in Digital Art, 3D Modelling, Texturing, Video and Music Production</>
         ),
         tags: [
           {
             name: "Photoshop",
             icon: "photoshop",
+          },
+          {
+            name: "After Effects",
+            icon: "aftereffects",
           },
           {
             name: "Blender",
@@ -201,6 +233,44 @@ const about: About = {
         // optional: leave the array empty if you don't want to display images
         images: [],
       },
+      {
+        title: "General Development Tools",
+        description: (
+          <></>
+        ),
+        tags: [
+          {
+            name: "Git",
+            icon: "git",
+          },
+          {
+            name: "Github",
+            icon: "github",
+          },
+          {
+            name: "Visual Studio Code",
+            icon: "vscode",
+          },
+          {
+            name: "Node.js",
+            icon: "nodejs",
+          },
+          {
+            name: "ChatGPT",
+            icon: "chatgpt",
+          },
+          {
+            name: "Codex",
+            icon: "codex",
+          },
+          {
+            name: "Gemini",
+            icon: "gemini",
+          }
+        ],
+        // optional: leave the array empty if you don't want to display images
+        images: [],
+      }
     ],
   },
 };
