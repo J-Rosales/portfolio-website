@@ -6,7 +6,7 @@ const person: Person = {
   lastName: "Rosales",
   name: `José Rosales`,
   role: "Senior Unity Developer & Tooling Engineer",
-  avatar: "/images/avatar.jpg",
+  avatar: "/images/avatar.png",
   email: "jrosalesdev@proton.me",
   location: "America/Matamoros",
   languages: ["English", "Spanish"], // optional: Leave the array empty if you don't want to display languages
@@ -121,7 +121,7 @@ const about: About = {
                 <a href="https://github.com/J-Rosales/botparts-generator">Spec_v2 AI Chat Character Cards</a>
               </li>
               <li>
-                <a href="https://github.com/psellos-prosopographia/psellos-hub">A Prosopographic model that incorporates narrative layering</a>
+                <a href="https://github.com/psellos-prosopographia/psellos-hub">A prosopographic model that incorporates narrative layering</a>
               </li>
               <li>
                 <a href="https://github.com/psellos-prosopographia/psellos-fiction-yneva-data/">An opinionated implementation of the above model for the prosopography of a fictional fantasy world</a>
@@ -177,7 +177,7 @@ const about: About = {
       {
         company: "Senior Game Designer",
         timeframe: "May 2021 - Nov 2024",
-        role: "Hopeless Gaming LLC",
+        role: "Hopeless Gaming LLC (Sacramento, CA | Remote)",
         achievements: [
           <>
             Led cross-functional development efforts, coordinating and mentoring a team of developers to deliver production-ready game features
@@ -187,6 +187,23 @@ const about: About = {
           </>,
           <>
             Contributed the entirety of the game's visuals and 90% of sounds effects and music.
+          </>
+        ],
+        images: [],
+      },
+      {
+        company: "QA Analyst",
+        timeframe: "May 2018 - Jul 2019",
+        role: "DiDigital (Matamoros, MX | On-Site)",
+        achievements: [
+          <>
+            Updated documentation and formalized implementation best practices for document digitalization pipeline.
+          </>,
+          <>
+            Acted as QA and end-users liaison by training staff on new functionality after updates.
+          </>,
+          <>
+            Optimized scan compression and file-naming conventions, cutting document storage footprint by ~30%.
           </>
         ],
         images: [],
